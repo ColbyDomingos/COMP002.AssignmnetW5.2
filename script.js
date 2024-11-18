@@ -12,6 +12,22 @@
 // Hint: Make sure you quote the emoji characters. They are strings, after all.
 // Hint: document.getElementById("balloon") will get the balloon element on the page.
 
+const balloon = document.getElementById("balloon"); // sets balloon variable to the element
+let size = 100; // sets a size variable
+
+document.addEventListener('keydown', (event) => { // adds the event listener
+    if (event.key === "ArrowUp") { // specifies the key to listen for
+        size += 10; // increments size by 10 (variable in javascript)
+        balloon.style.fontSize = size + "px"; // sets the size of the balloon in css
+    } else if (event.key === "ArrowDown") { // same as the other event key
+        size -= 10; // decreases size by 10
+        balloon.style.fontSize = size + "px"; // sets the size of the balloon in css
+    }
+})
+
+
+
+
 // 2. The index.html page has a tabbed layout. Make the default state of the layout show
 // the first tab, and make it so that when you click the links at the top the correct
 // tab's contents are displayed and the others are hidden. Prevent the default action of
@@ -19,3 +35,4 @@
 // function as expected. There are many ways to accomplish this task, but you will need
 // to at minimum add listeners to each link and toggle the display of the tab contents.
 // Hint: display: none; hides an element, and display: block; will bring it
+
