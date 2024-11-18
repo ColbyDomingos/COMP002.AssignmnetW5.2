@@ -36,3 +36,36 @@ document.addEventListener('keydown', (event) => { // adds the event listener
 // to at minimum add listeners to each link and toggle the display of the tab contents.
 // Hint: display: none; hides an element, and display: block; will bring it
 
+const tab1Link = document.getElementById("tab1Link");
+const tab2Link = document.getElementById("tab2Link"); // Gets the tab links and sets them to variables
+const tab3Link = document.getElementById("tab3Link");
+
+const tab1 = document.getElementById("tab1");
+const tab2 = document.getElementById("tab2"); // Gets the tab content and sets them to variables
+const tab3 = document.getElementById("tab3");
+
+tab1Link.addEventListener("click", function(event) { // adds the click event listener
+    event.preventDefault();
+    tab1.style.display = "block";
+    tab2.style.display = "none"; // Hides the other tabs when one is clicked
+    tab3.style.display = "none";
+});
+
+tab2Link.addEventListener("click", function(event) {
+    event.preventDefault();
+    tab1.style.display = "none";
+    tab2.style.display = "block"; // Hides the other tabs when 2 is clicked
+    tab3.style.display = "none";
+});
+
+tab3Link.addEventListener("click", function(event) {
+    event.preventDefault();
+    tab1.style.display = "none";
+    tab2.style.display = "none"; // Hides the other tabs when 3 is clicked
+    tab3.style.display = "block";
+});
+
+tab1.style.display = "block";
+tab2.style.display = "none";    // Hides 2 and 3 on default
+tab3.style.display = "none";
+
